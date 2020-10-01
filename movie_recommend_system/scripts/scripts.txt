@@ -1,0 +1,1 @@
+this folder script contain several .py files (modules or scripts), each script materialice instrunctions or implement something functionalities that contributing an one u other step of procces or pipe... in a dataflowproccess in a recommend system. 
