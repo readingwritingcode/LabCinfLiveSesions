@@ -1,0 +1,1 @@
+describe pipes(order secuences for collect, explore, describe and relate fields to each other)
