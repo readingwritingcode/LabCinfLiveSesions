@@ -1,3 +1,14 @@
+#read structured user-query.
+
+#call api. api params = values user query.
+
+#process api results with user criteria.
+
+#store results
+
+##example of codes
+''' Write 1000 liness of text data in .txt file.
+'''
 import time
 
 _continue=True
