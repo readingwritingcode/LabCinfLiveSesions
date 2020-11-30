@@ -1,34 +1,9 @@
-#read structured user-query.
+# Load User-Query. 
 
-#call api. api params = values user query.
+# Make url query: Api params = values user query.
 
-#process api results with user criteria.
+# Call api.
 
-#store results
+# Handle api response and results: these should be processed respect the user criteria.
 
-##example of codes
-''' Write 1000 liness of text data in .txt file.
-'''
-import time
-
-_continue=True
-ciclo=0
-time_start=time.time()
-cont = 1
-while _continue:
-
-	with open('datacollected.txt','a') as data_handled:
-
-		data='ciclo %s' % ciclo
-		ciclo+=1
-
-		data_handled.write(ciclo*'IlovePython'+'\n')
-		#print(ciclo,'write')
-		print(ciclo*'*')
-
-	time.sleep(0.1)
-	print('write',cont,'de', 10000)
-	cont+=1
-
-	if cont == 10001:
-		_continue=False
+# Store results that match user criteria.
