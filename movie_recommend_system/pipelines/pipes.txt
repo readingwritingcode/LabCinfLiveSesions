@@ -1,1 +1,1 @@
-Describe pipes(order secuences for read, collect, proccess, explore and present) Dataset Movie.
+Describe pipes: order of secuences for read, collect, proccess, explore and present Dataset Movie.
