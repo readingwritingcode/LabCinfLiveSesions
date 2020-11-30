@@ -1,9 +1,8 @@
-  ''' basic things that we should think about from now'''
+  #### Basic things that we should think about from now ###
+  # READ DATA
   
   # read unstructure or structure user data
   
-  # make user query
-  
-  # store user query
-  
-  # validate user query with other user queryes!
+  # store user query 
+ 
+  # note: write function that validate user query with other user queryes.
