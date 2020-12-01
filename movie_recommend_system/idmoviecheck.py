@@ -4,24 +4,7 @@ import json     # data format structures
 import time 	# proccess utils: time requests
 import requests # http request: eg. get and post methods
 
-
-'''Retrieve or collecte a bunch of movies data from TMDB.'''
-
-
-def get_movie_data(movie_id):
-	
-	URL = 'https://api.themoviedb.org/3/movie/{}?api_key={}'
-	tmdb_api_key = os.environ['TMDB_API_KEY']
-
-	tmdb_api = requests.Session()				# python webserver instance
-	tmdb_api.params={'api_key':tmdb_api_key}	# load info instance
-
-	url = URL.format(movie_id,tmdb_api_key)
-
-	httpResp=tmdb_api.get(url)
-	global status_code
-	status_code = httpResp.status_code
-	return status_code
+from tmdb_movie_by_id import parametrize_api_connect
 
 def get_movies_data(num_movies):
 
@@ -30,7 +13,7 @@ def get_movies_data(num_movies):
 
 	while _continue:
 
-		get_movie_data(cont)
+		status_code = parametrize_api_connect.get(cont).status_code
 		
 		time.sleep(0.5)
 		cont+=1
@@ -40,9 +23,11 @@ def get_movies_data(num_movies):
 		if cont==num_movies:
 			_continue = False
 	
-
 def main():
-	get_movies_data(sys.argv[1])
-
+	try:
+		get_movies_data(sys.argv[1])
+	except Error:
+		print("you are forget something, maybe std imput:movie_id")
+		
 if __name__ == '__main__':
 	main()
