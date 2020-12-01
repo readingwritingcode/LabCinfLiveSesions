@@ -19,12 +19,13 @@ def parametrize_api_connect(URL=True,API_KEY=True):
 
 def get_movie_data(movie_id):                                           # retrieve all metadata movie by id
 	
-	url ='https://api.themoviedb.org/3/movie/{}'.format(movie_id)
-	#make http request and handle api responses
+	_url ='https://api.themoviedb.org/3/movie/{}'.format(movie_id)
 	
-	'''general form
+	parametrize_api_connect()
+	#make http request and handle api responses
+	'''general form:
 	try:
-            response = requests.post(_url, files={'file': some_file})
+            response = tmdb_end_point.get(_url)
             response.raise_for_status()
         except requests.exceptions.HTTPError as errh:
             return "An Http Error occurred:" + repr(errh)
@@ -36,18 +37,12 @@ def get_movie_data(movie_id):                                           # retrie
             return "An Unknown Error occurred" + repr(err)
 	
 	search for common errors for get method and handle it!
-	'''
-	
-	httpResp=tmdb_end_point.get(url)
-	print(httpResp.status_code)
-	
-	
+	'''	
 	# from response extract movie data
 	
-	movie_json=httpResp.json()
+	dict_data = response.text
 	
-	print(movie_json['movie_data'])
-	return movie_json
+	return dict_data
 
 def main():
 	id = sys.argv[1]
